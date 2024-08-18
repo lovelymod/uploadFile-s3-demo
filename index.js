@@ -27,7 +27,7 @@ const upload = multer({
     acl: "public-read",
     // FileName
     key: function (req, file, cb) {
-      cb(null, file.originalname + "-" + Date.now().toString());
+      cb(null, Date.now().toString() + "-" + file.originalname);
     },
     // for open image or file from URL instead of Download
     contentType: multerS3.AUTO_CONTENT_TYPE,
